@@ -1,0 +1,17 @@
+.tagPreview
+  .row
+    .col-md-12
+      .selector-box-index
+        .row
+          .col-md-12
+            .index-item-menu
+              = button_to  tag, class: 'delete-button index-link', method: :delete, remote: true do
+                i.fas.fa-trash-alt[class="fa-icon"]
+                |  Delete 
+              - #= link_to 'Delete', product_tag_path(tag.product, tag), method: :delete, remote: true, class: 'delete-button index-link'
+            strong[class="fa-icon"]
+              = tag.category
+        .row
+          .col-md-12
+            .frame
+              = image_tag("#{tag.fullUrl}", class: 'inner-frame')

@@ -1,0 +1,73 @@
+<div class="row" style="height: 200px;"></div>
+
+<div class="row">
+  <div class="col-md-2"></div>
+
+  <div class="col-md-8">
+    <div class="black-box menu-padding shadow">
+
+      <div class="row">
+
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <%= link_to products_path, class: 'index-link' do %>
+              <%= image_tag('trolley.svg', style:'height: 100px; width: 100px;') %> <!-- Icons from: https://www.flaticon.com -check user agreement -->
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <%= link_to new_product_path, class: 'index-link' do %>
+              <%= image_tag('tools.svg', style:'height: 100px; width: 100px;') %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <%= link_to tags_path, class: 'index-link' do %>
+              <%= image_tag('contract.svg', style:'height: 100px; width: 100px;') %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <%= image_tag('clipboard.svg', style:'height: 100px; width: 100px;') %>
+          </div>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <strong class="add-orange">view products<%#= link_to 'Products', products_path, class: 'index-link' %></strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <strong class="add-orange">create new product<%#= link_to 'New Product', new_product_path, class: 'index-link'%></strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <strong class="add-orange">transcribe tags<%#= link_to 'Transcribe tags', tags_path, class: 'index-link'%></strong>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="add-bt-bod">
+            <strong class="add-orange">view transcribed</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-md-2"></div>
+</div>

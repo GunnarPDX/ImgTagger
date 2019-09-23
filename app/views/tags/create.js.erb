@@ -1,0 +1,25 @@
+$( '#submit-button' ).hide(); //hide submit button
+//disable button
+$('#form-submit').attr("disabled", false); //re-enable form submit button
+
+//$( '#loading-spinner' ).hide(); //hide loading spinner once done
+$( '#loading-spinner' ).remove();
+$( '#loading-spinner' ).append().hide(); // just using .hide() broke
+
+$( '#success-spinner' ).fadeIn(); //successful submit animation
+
+$( '#checkmark' ).toggle();  //toggle animation
+
+$( '#cropImage' ).cropper("reset"); //reset the crop view to default for new tag
+
+setTimeout(function (){
+
+    $( '#success-spinner' ).hide(); //hide success animation
+    $( '#category-caption' ).fadeIn(); //set things back to normal
+
+}, 1700); //let submit spinner animation play for 1700ms
+
+$( '#tags-list' ).append("<%= j render @tag %>"); //append new tag to tags list
+
+//$('select').niceSelect('destroy'); //make form select reset after insertion
+//$('select').niceSelect('update');

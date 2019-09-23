@@ -1,0 +1,8 @@
+class Image < ApplicationRecord
+  belongs_to :product
+  has_many :tags, dependent: :destroy
+
+  # accepts_nested_attributes_for :tags
+
+  # belongs_to :tag
+end

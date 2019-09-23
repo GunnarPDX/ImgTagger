@@ -1,0 +1,57 @@
+div
+  .row
+    .col-md-7
+      .title-box.shadow
+        p.title
+          strong
+            | Crop Image
+    .col-md-5
+      .title-box-2.shadow
+        p.title
+          strong
+            | Preview
+  .row
+    .col-md-7
+      #spinner
+      #crop-stage.shadow.m-b-sm[style="height: 400px; border-radius: 4px;"]
+        - @images.first(1).each do |image|
+          = image_tag(filestack_url_500x500(image.handle), id: 'cropImage', "data-first-image-id":image.id)
+      .crop-buttons
+        .toolbar
+          button.toolbar__button[data-method="rotate" data-option="-20" title="Rotate Left"]
+            span.fa.fa-rotate-left
+          button.toolbar__button[data-method="rotate" data-option="90" title="Rotate 90"]
+            span.fas.fa-sync
+          button.toolbar__button[data-method="rotate" data-option="20" title="Rotate Right"]
+            span.fa.fa-rotate-right
+    .col-md-5
+      .img-box2.shadow[style="height: 400px;"]
+        .img-container
+          .preview
+
+  br
+  .row
+    .col-md-7
+      .row
+        .col-sm-12
+          .img-box.shadow
+            #divId[onclick="changeImageOnClick(event)" style="margin: 0 40px"]
+              .responsive
+                - @images.each do |image|
+                  div
+                    = image_tag(filestack_url_500x500(image.handle), class: 'imgStyle', "data-image-id":image.id)
+    = render 'tags/form'
+  br
+
+  .row
+    .col-md-7
+      .tags-list
+        = render 'tags/tags_list'
+    .col-md-5
+      .black-box
+        .add-bt-bod
+          = button_to 'All Done', tags_path, method: :get, data: { confirm: 'Are you sure?' }, class: 'button btn-primary'
+
+
+= javascript_include_tag "responsive_display", "data-turbolinks-track" => true
+= javascript_include_tag "tasks_manager", "data-turbolinks-track" => true

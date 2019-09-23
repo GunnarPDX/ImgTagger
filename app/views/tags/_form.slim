@@ -1,0 +1,45 @@
+= simple_form_for([@product, @tag],html: { id: "tagform" }, remote: true, update:{ success: "response", failure: "error"} ) do |f|
+  .col-md-5
+    .row
+      .col-md-12
+        .selector-box.shadow
+          .row
+            .add-bt-bod
+              = f.select :category, ['Select A Category','Brand', 'Name', 'Size', 'Serial Number', 'Model Number', 'Other'], {}, {onchange: 'addSubmitButtonOnSelect()', class: 'categorySelect'}
+          br
+          = f.hidden_field :handle, id: 'handleInput'
+          = f.hidden_field :cropX, id: 'coords-x'
+          = f.hidden_field :cropY, id: 'coords-y'
+          = f.hidden_field :cropH, id: 'coords-h'
+          = f.hidden_field :cropW, id: 'coords-w'
+          = f.hidden_field :rotate, id: 'coords-rotate'
+          = f.hidden_field :fullUrl, id: 'urlInput'
+          = f.hidden_field :image_id, id: 'image-id'
+          .row
+            .add-bt-bod
+              = f.error_notification
+              .invisible-box
+                #category-caption
+                  .add-bt-bod
+                    strong.caption
+                      | Please select a tag category.
+                #submit-button
+                  .add-bt-bod
+                    = f.button :submit, 'Submit Tag', class: 'btn btn-warning', id: 'form-submit', onmouseup: 'disableButtonOnClick()'
+                #loading-spinner
+                  .add-bt-bod
+                    .loader
+                      //hr
+                      //hr
+                      //hr
+                      //hr
+                #success-spinner
+                  .add-bt-bod
+                    svg.checkmark.success[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 52 52"]
+                      circle.checkmark__circle[cx="26" cy="26" r="25" fill="none"]
+                      path.checkmark__check.success[fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"]
+                #failure-spinner
+                  .add-bt-bod
+                    svg.checkmark.error[xmlns="http://www.w3.org/2000/svg" viewbox="0 0 52 52"]
+                      circle.checkmark__circle[cx="26" cy="26" r="25" fill="none"]
+                      path.checkmark__cross.error[d="M 16,16 L 36,36 M 36,16 L 16,36" fill="none"]

@@ -1,0 +1,9 @@
+//br
+
+//= transcribe(@tag.parentId)
+
+= simple_form_for(item) do |f|
+  .form-inline
+    = f.text_field :transcription, class: 'form-control'
+    = f.hidden_field :isTranscribed, value: true
+    = f.button :submit, class: 'btn btn-outline-dark mb-2'

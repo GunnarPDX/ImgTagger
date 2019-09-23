@@ -1,0 +1,653 @@
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+//------------------ Defaults -----------------
+//-Colors
+$charcoal-grey: #2b2b2b;
+$light-grey: #eeeeee;
+$white: #ffffff;
+$soft-orange: #faa667;
+$yellow: #ffc955;
+
+//-Textures
+$damascus: 'https://www.transparenttextures.com/patterns/cartographer.png';
+$white-grain: 'noisy-texture-100x100-o2-d10-c-ffffff-t0.png';
+$grey-grain: 'noisy-texture-100x100-o4-d10-c-eeeeee-t0.png';
+$graph-paper: 'graphy-dark.png';
+
+//-Dimensions
+$border-radius-standard: 4px;
+
+
+//---------------------------------------------
+
+//---- Image Tag Frame
+
+.frame{
+  background: rgba(249, 242, 244, 0.38);
+  border: 3px solid rgba(214, 209, 214, 0.33);
+  border-radius: $border-radius-standard;
+  height: 100px;
+  width: 400px;
+  padding: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-frame{
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+//---- Tag transcription form
+
+.text{
+  padding: 0;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+//---- Search Box
+
+.search {
+  //src: http://www.bloggermint.com/2011/06/css3-search-box-inspired-by-apple-com/
+
+  float: right;
+  display: inline-block;
+  //-----------------
+
+  background: url(search-dark.png) no-repeat 10px 6px #444;
+  border: 0 none;
+  font: bold 12px Arial,Helvetica,Sans-serif;
+  color: #777;
+  width: 150px;
+  padding: 6px 15px 6px 35px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: $border-radius-standard; // 20px;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+
+//----
+
+.shadow {
+  box-shadow: 4px 4px 6px 0 hsla(0, 0%, 0%, 0.15);
+}
+
+.black-box {
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-color: $charcoal-grey;
+  border-radius: $border-radius-standard;
+  padding: 10px;
+}
+
+.menu-padding {
+  padding: 50px;
+}
+
+.saved-img-tag {
+  height: 80px;
+}
+
+//---- Buttons
+
+.button {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border-radius: $border-radius-standard;
+}
+
+.btn-warning, .btn-warning:hover, .btn-warning:active, .btn-warning:visited {
+  background-color: $charcoal-grey;
+  border-color: $white;
+  color: $white;
+
+  &:hover{
+    border-color: $soft-orange;
+    color: $soft-orange;
+  }
+}
+
+.add-orange {
+  color: $soft-orange;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-color: $charcoal-grey;
+  border-color: $soft-orange;
+  color: $soft-orange;
+
+  &:hover{
+    border-color: $yellow;
+    color: $yellow;
+  }
+}
+
+.index-link {
+  float: right;
+  display: inline-block;
+  margin-right: 10px;
+  //padding-right: 10px;
+  padding-left: 2px;
+  text-decoration: none;
+  color: $charcoal-grey;
+  background: none;
+  border: none;
+
+  &:hover, &:visited {
+    color: $charcoal-grey;
+    background: none;
+  }
+}
+
+.fa-icon {
+  color: $charcoal-grey;
+}
+
+//---- Various text/header/container styles
+
+.tagRow {
+  border-top: 0;
+}
+
+.selector-box2 {
+  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  background-color: $white;
+  border-radius: $border-radius-standard;
+  padding: 10px;
+}
+
+.categorySelect {
+  margin-top: 10px;
+}
+
+.tagsInput {
+  height:70px;
+}
+
+.invisible-box {
+  width: 300px;
+  height: 75px;
+}
+
+.caption {
+  margin: 0 0 0 10px;
+  color: #a5a6a4;
+}
+
+.title-box {
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-color: $charcoal-grey;
+  border-radius: $border-radius-standard;
+
+  width: 100px;
+  height: auto;
+
+  margin-bottom: 10px;
+}
+
+.title-box-2{
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-color: $charcoal-grey;
+  border-radius: $border-radius-standard;
+
+  width: 70px;
+  height: auto;
+
+  margin-bottom: 10px;
+}
+
+.add-th-space {
+  padding: 5px;
+}
+
+.title-box-index {
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-color: $charcoal-grey;
+  border-radius: 4px 4px 0 0;
+
+  padding: 10px;
+  margin-left: 0;
+}
+
+.button-box-index {
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-color: $charcoal-grey;
+  border-radius: 0 0 4px 4px;
+
+  padding: 10px;
+  margin-left: 0;
+}
+
+.title {
+  margin: 0;
+  padding: 5px;
+  color: #d4d4d4;
+}
+
+.title-index {
+  margin: 0;
+  padding: 5px;
+  color: $soft-orange;
+  font-size: 17pt;
+}
+
+.caption-box{
+  padding-top: 2px;
+}
+
+.menu-option {
+  padding-left: 10px;
+}
+
+//---- Various Container Styles
+
+.selector-box {
+  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  background-color: #ffffff;
+  border-radius: $border-radius-standard;
+  padding: 10px;
+}
+
+.selector-box-index {
+  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  background-color: #ffffff;
+  border-top: 1px solid rgb(214, 217, 214);
+  padding: 10px;
+}
+
+.img-box {
+  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  padding-top: 25px;
+  padding-bottom: 5px;
+  background-color: #FFFFFF;
+  height: auto;
+  border-radius: $border-radius-standard;
+}
+
+.img-box2 {
+  background-color: #c2c2c2;
+  background-image: url('graphy-dark.png'); //also nice -> url(tiny-grid.png);
+  border-radius: $border-radius-standard;
+}
+
+.img-box3 {
+  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  background-color: $white;
+  padding: 9px;
+  height: auto;
+  width: auto;
+  border-radius: $border-radius-standard;
+}
+
+.imgStyle
+{
+  width:100px;
+  height:100px;
+  border: 1px solid #b3b3b3;
+  border-radius: $border-radius-standard;
+  margin-left: 18px;
+}
+
+img:before {
+  content: ' ';
+  height: 100px;
+  width: 100px;
+  background-image: url(No-IMG.jpg);
+}
+
+.img-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//---- Navbar Styles
+
+.navbarNew {
+  width: 100%;
+  height: 6px;
+  background-image: linear-gradient(to right, #fff25b, #fab578);
+  z-index: 9998;
+
+  /* notice below: */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 20px;
+
+  background-color: $white;
+}
+
+.navbarLower {
+  /* This Should Be Upper */
+  width: 100%;
+  height: 26px;
+  z-index: 9997;
+
+  /* notice below: */
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+  background-color: $charcoal-grey;
+
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.15);
+}
+
+.navbarLink {
+  height: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.navTab {
+  height: 20px;
+  width: auto;
+  margin-top: 0px;
+  background: transparent;
+  border: none;
+  border-radius: 0 0 4px 4px;
+  margin-right: 0;
+  padding-right: 15px;
+  color: $soft-orange; //#6e6b6d;
+}
+
+//---- App background
+
+.backdrop {
+  background-image: url('noisy-texture-100x100-o4-d10-c-eeeeee-t0.png');
+  background-color: $light-grey;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+//---- rotation buttons on cropper page
+
+.toolbar {
+  background-color: rgba(0, 0, 0, .5);
+  bottom: 1rem;
+  color: $white;
+  height: 2rem;
+  left: 50%;
+  margin-left: -3rem;
+  position: absolute;
+  width: 6rem;
+  z-index: 2015;
+}
+.toolbar__button {
+  background-color: transparent;
+  border-width: 0;
+  color: $white;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: .875rem;
+  height: 2rem;
+  text-align: center;
+  width: 2rem;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+
+    color: $soft-orange;
+  }
+}
+
+//---- Random styles
+
+p {
+  margin: 0;
+  text-decoration: none;
+}
+
+html, body {
+  height: 100%; //removes scroll bounce
+  overflow: hidden;
+}
+
+#mainContainer {
+  position: absolute; //removes scroll bounce
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.add-bt-bod {
+  display: flex; //centers stuff
+  justify-content: center;
+  align-items: center;
+}
+
+input:focus {
+  outline:none; // removes annoying blue glow on click from buttons/links
+}
+
+//
+///
+////
+////---------------------- Load spinners css Below
+////
+/// https://github.com/lukehaas/css-loaders
+///
+//
+
+.loader,
+.loader:before,
+.loader:after {
+  background: $soft-orange;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: $soft-orange;
+  text-indent: -9999em;
+  //margin: 88px auto;
+  position: relative;
+  font-size: 6px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+
+
+//-----------------------------------------
+////---------------- Submit/Fail spinner below
+// https://codepen.io/u01jmg3/pen/vdmXov (success and failure)
+//-----------------------------------------
+
+$green: #7ac142;
+$color--green: #7ac142;
+$color--pink: #d06079;
+$white: #fff;
+
+// Misc
+$curve: cubic-bezier(0.650, 0.000, 0.450, 1.000);
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: $white;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px ; //$green;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+
+  &.error {
+    color: $color--pink;
+
+    .success           { display: none }
+    .checkmark__circle { stroke: $color--pink }
+  }
+
+  &.success {
+    color: $color--green;
+
+    .error             { display: none }
+    .checkmark__circle { stroke: $color--green }
+  }
+}
+
+.checkmark__circle {
+  /*
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: $green;
+  fill: none;
+  animation: stroke .6s $curve forwards;*/
+
+  animation: stroke .6s $curve forwards;
+  fill: none;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-miterlimit: 10;
+  stroke-width: 2;
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke .3s $curve .8s forwards;
+}
+
+.checkmark__cross {
+  animation: stroke .3s $curve .8s forwards;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke-linecap: round;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+} */
+
+@keyframes scaleOne {
+  0%,
+  100% { transform: none }
+  50%  { transform: scale3d(1.1, 1.1, 1) }
+}
+
+@keyframes scaleTwo {
+  0%,
+  100% { transform: none }
+  50%  { transform: scale3d(1.1, 1.1, 1) }
+}
+
+@keyframes fill {
+  100% { box-shadow: inset 0px 0px 0px 30px }
+}
+
+@keyframes unfill {
+  100% { box-shadow: inset 0 0 0 }
+}
+
+@keyframes unstrokeCheck {
+  100% { stroke-dashoffset: 48 }
+}
+
+@keyframes unstrokeCircle {
+  100% { stroke-dashoffset: 166 }
+}
+
+/* */
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px ; //$green;
+  }
+}
+

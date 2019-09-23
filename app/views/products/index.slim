@@ -1,0 +1,54 @@
+.col-md-2
+.col-md-8
+  .shadow
+    .row
+      .col-md-12
+        .title-box-index
+          .none
+            = form_tag products_path, method: :get do
+              = text_field_tag :search, params[:search], class: 'search', autocomplete: 'off'
+          p.title-index
+            |  Products
+    - @products.each do |product|
+      .row
+        .col-md-12
+          .selector-box-index
+            .row
+              .col-md-12
+                .index-item-menu
+                  = button_to product, class: 'index-link', method: :get do
+                    i.fas.fa-eye[class="fa-icon"]
+                    |  Show
+                  = button_to edit_product_path(product), class: 'index-link', method: :get do
+                    i.fas.fa-edit[class="fa-icon"]
+                    |  Edit
+                  = button_to new_tags_url(product), class: 'index-link', method: :get do
+                    i.fas.fa-crop[class="fa-icon"]
+                    |  Create Tags
+                  = button_to product, class: 'index-link', method: :delete, data: { confirm: 'Are you sure?' } do
+                    i.fas.fa-trash-alt[class="fa-icon"]
+                    |  Delete
+                strong[class="fa-icon"]
+                  = product.name
+            br
+            .row
+              .col-md-12
+                div[style="margin: 0 40px"]
+                  .responsive
+                    - product.images.each do |image|
+                      div
+                        = image_tag(image.url, class: 'imgStyle')
+    .row
+      .col-md-12
+        .button-box-index
+          .add-bt-bod
+            = button_to 'New Product', new_product_path, method: :get, class: 'button btn-primary'
+  //.row
+    = form_tag products_path, method: :get do
+      = text_field_tag :search, params[:search], class: 'search'
+      //=submit_tag 'Search'
+
+.col-md-2
+
+
+= javascript_include_tag "responsive_display", "data-turbolinks-track" => true

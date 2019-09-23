@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tag & Transcript App</title>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag asset_path('favicon.ico') %>
+
+  <!--<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>-->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://kit.fontawesome.com/468d879517.js"></script>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body class="backdrop">
+  <div id="mainContainer">
+
+    <%= render "layouts/navigation" %>
+    <br>
+    <br>
+
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+
+  </div>
+</body>
+
+</html>

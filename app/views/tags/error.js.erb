@@ -1,0 +1,11 @@
+console.log('failure');
+//$( '#loading-spinner' ).hide(); // hide load spinner
+$( '#failure-spinner' ).fadeIn(); // run failure spinner
+$( '#checkmark' ).toggle();  // toggle animation
+
+setTimeout(function (){
+
+    $( '#failure-spinner' ).hide(); // hide failure animation
+    $( '#category-caption' ).fadeIn(); // set things back to normal
+
+}, 1700);
