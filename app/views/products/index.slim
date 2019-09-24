@@ -9,6 +9,8 @@
               = text_field_tag :search, params[:search], class: 'search', autocomplete: 'off'
           p.title-index
             |  Products
+          //.add-bt-bod
+            = button_to 'New Product', new_product_path, method: :get, class: 'button btn-primary'
     - @products.each do |product|
       .row
         .col-md-12
@@ -42,13 +44,12 @@
       .col-md-12
         .button-box-index
           .add-bt-bod
-            = button_to 'New Product', new_product_path, method: :get, class: 'button btn-primary'
-  //.row
-    = form_tag products_path, method: :get do
-      = text_field_tag :search, params[:search], class: 'search'
-      //=submit_tag 'Search'
+            //= button_to 'New Product', new_product_path, method: :get, class: 'button btn-primary'
+            .apple_pagination
+              = will_paginate @products
 
 .col-md-2
+
 
 
 = javascript_include_tag "responsive_display", "data-turbolinks-track" => true

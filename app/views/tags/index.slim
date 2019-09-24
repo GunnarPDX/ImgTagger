@@ -30,10 +30,9 @@
               .col-md-5
                 .frame
                   = image_tag(tag.fullUrl, class: 'inner-frame')
-              .col-md-5
-                .selector-box
+              .col-md-4
+                .transcription-box
                   .text
-                    //this can go below img and
                     strong
                       | Transcription:
                     - if tag.isTranscribed
@@ -41,10 +40,17 @@
                     - else
                       | N/A
                   = render 'edit', item: tag
-              .col-md-2
-                // Saved transcription icon will go here
+              .col-md-3
+                -if tag.isTranscribed
+                  .left
+                    .add-bt-bod
+                      .fas.fa-clipboard-check.fa-4x.green
+            .row
+              //= transcribe(tag.parentId)
     .row
       .col-md-12
         .button-box-index
-          div[style="height:30px;"]
+          .add-bt-bod
+            .apple_pagination
+              = will_paginate @tags
 .col-md-2

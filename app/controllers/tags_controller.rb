@@ -3,7 +3,7 @@ class TagsController < ApplicationController
   before_action :set_tag, only: [:edit, :update, :destroy]
 
   def index
-    @tags = Tag.search(params[:search])
+    @tags = Tag.search(params[:search]).paginate(page: params[:page], per_page: 7)
   end
 
   def edit
