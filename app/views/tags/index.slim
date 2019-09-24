@@ -38,7 +38,7 @@
                     - if tag.isTranscribed
                       = tag.transcription
                     - else
-                      | N/A
+                      | - None Saved -
                   = render 'edit', item: tag
               .col-md-3
                 -if tag.isTranscribed
@@ -46,7 +46,11 @@
                     .add-bt-bod
                       .fas.fa-clipboard-check.fa-4x.green
             .row
-              //= transcribe(tag.parentId)
+              .col-md-12
+                strong
+                  | Suggestion:
+                - if tag.visionResult
+                  = tag.visionResult
     .row
       .col-md-12
         .button-box-index

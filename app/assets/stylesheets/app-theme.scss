@@ -186,7 +186,7 @@ $border-radius-standard: 4px;
   border-radius: $border-radius-standard;
 }
 
-.btn-warning, .btn-warning:hover, .btn-warning:active, .btn-warning:visited {
+.button-warning, .button-warning:hover, .button-warning:active, .button-warning:visited {
   background-color: $charcoal-grey;
   border-color: $white;
   color: $white;
@@ -201,7 +201,7 @@ $border-radius-standard: 4px;
   color: $soft-orange;
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+.button-primary, .button-primary:hover, .button-primary:active, .button-primary:visited {
   background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
   background-color: $charcoal-grey;
   border-color: $soft-orange;
