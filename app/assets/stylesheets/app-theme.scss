@@ -236,6 +236,13 @@ $border-radius-standard: 4px;
 
 //---- Various text/header/container styles
 
+.result-box{
+  background: rgba(249, 227, 132, 0.38);
+  //border: 3px solid rgba(214, 209, 214, 0.33);
+  border-radius: $border-radius-standard;
+  padding: 3px;
+}
+
 .tagRow {
   border-top: 0;
 }

@@ -45,12 +45,14 @@
                   .left
                     .add-bt-bod
                       .fas.fa-clipboard-check.fa-4x.green
-            .row
-              .col-md-12
-                strong
-                  | Suggestion:
-                - if tag.visionResult
-                  = tag.visionResult
+            - if tag.visionResult
+              br
+              .row
+                .col-md-12
+                  .result-box
+                    strong
+                      | Suggestion:
+                    = tag.visionResult
     .row
       .col-md-12
         .button-box-index

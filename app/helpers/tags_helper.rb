@@ -8,7 +8,7 @@ module TagsHelper
   require 'json'
 
   def transcribe(img_url)
-
+    # No longer in use
     uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY_GOES_HERE')
     request = Net::HTTP::Post.new(uri)
     request.content_type = 'application/json'
