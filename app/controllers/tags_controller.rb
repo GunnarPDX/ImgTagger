@@ -53,7 +53,7 @@ class TagsController < ApplicationController
   private
 
   def transcribe(img_url)
-    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY_GOES_HERE')
+    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY_HERE')
     request = Net::HTTP::Post.new(uri)
     request.content_type = 'application/json'
     request.body = JSON.dump('requests' => [{ 'image' => { 'source' => { 'imageUri' => img_url } }, 'features' => [{ 'type' => 'TEXT_DETECTION', 'maxResults' => 1, 'model' => 'builtin/latest' }] }])
@@ -64,9 +64,23 @@ class TagsController < ApplicationController
     response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
       http.request(request)
     end
-    data = JSON.parse(response.body)
-    transcription = data['responses'][0]['textAnnotations'][0]['description']
-    @tag.update(visionResult: transcription)
+
+    case response
+      when Net::HTTPSuccess
+        data = JSON.parse(response.body)
+        transcription = data['responses'][0]['textAnnotations'][0]['description']
+        @tag.update(visionResult: transcription, isVisionTrue: true)
+      when Net::HTTPUnauthorized
+        puts 'Add/Setup API Key'
+        puts response.body
+      when Net::HTTPServerError
+        puts 'Server-side Error'
+        puts response.body
+      else
+        puts 'Other Error'
+        puts response
+        puts response.body
+    end
 
     # make it only save vision result, and then build helper in view to set transcription to vision result...
   end
