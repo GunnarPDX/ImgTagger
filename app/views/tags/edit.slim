@@ -1,0 +1,52 @@
+br
+
+//= transcribe(@tag.parentId)
+
+.title-box-index
+  p.title-index
+    | Image Tag
+.selector-box
+  h5
+    strong
+      | Category:
+    = @tag.category
+  = image_tag(@tag.fullUrl)
+  br
+  br
+  - if @tag.isTranscribed
+    h5
+      strong
+        | Transcription:
+      = @tag.transcription
+  br
+  = simple_form_for(@tag) do |f|
+    .form-inputs
+      = f.text_field :transcription
+    br
+    = f.hidden_field :isTranscribed, value: true
+    .form-actions
+      = f.button :submit
+
+
+br
+//h5
+  strong
+    | Image ID:
+    = @tag.image_id
+  br
+  strong
+    | Tag ID:
+    = @tag.id
+  br
+  strong
+    | Product ID:
+    = @tag.product.id
+  br
+  strong
+    | Image:
+    = @image.handle
+  br
+  strong
+    | Test:
+    = @tag.image.handle
+    /= @tag.product.images.find(@tag.image_id).handle

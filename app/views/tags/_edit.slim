@@ -1,8 +1,61 @@
+.row
+  .col-md-12
+    .selector-box-index
+      .row
+        .col-md-12
+          .index-item-menu
+            //= button_to edit_tag_path(tag), class: 'index-link', method: :get do
+                    i.fas.fa-i-cursor[class="fa-icon"]
+                    |  Transcribe
+            = button_to item, class: 'index-link', method: :delete, data: {confirm: 'Are you sure?'} do
+              i.fas.fa-trash-alt[class="fa-icon"]
+              |  Delete
+          strong[class="fa-icon"]
+            = item.category
+      br
+      .row
+        .col-md-5
+          .frame
+            = image_tag(item.fullUrl, class: 'inner-frame')
+        .col-md-5
+          .transcription-box
+            .text
+              .result-box
+                strong
+                  | Suggestion:&ensp;
+                = item.visionResult
+              br
+              //strong
+                | Transcription:
+                - if item.isTranscribed
+                  = item.transcription
+                - else
+                  | - None Saved -
+              = simple_form_for(item) do |f|
+                .form-inline
+                  = f.text_field :transcription, class: 'form-control'
+                  = f.hidden_field :isTranscribed, value: true
+                  = f.button :submit, class: 'btn btn-outline-dark mb-2'
+        .col-md-2
+          //-if item.isTranscribed
+            .left
+              .add-bt-bod
+                .fas.fa-clipboard-check.fa-4x.green
+      //- if item.visionResult
+        br
+        .row
+          .col-md-12
+            .result-box
+              strong
+                | Suggestion:
+              = item.visionResult
+
+
 //br
 
 //= transcribe(@tag.parentId)
 
-= simple_form_for(item) do |f|
+//= simple_form_for(item) do |f|
   .form-inline
     = f.text_field :transcription, class: 'form-control'
     = f.hidden_field :isTranscribed, value: true

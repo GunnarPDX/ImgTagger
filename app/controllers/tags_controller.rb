@@ -9,7 +9,11 @@ class TagsController < ApplicationController
   before_action :set_tag, only: %i[edit update destroy]
 
   def index
-    @tags = Tag.search(params[:search]).paginate(page: params[:page], per_page: 4)
+    @tags = Tag.where(isTranscribed: !true).search(params[:search]).paginate(page: params[:page], per_page: 4)
+  end
+
+  def transcribed_tags
+    @tags = Tag.where(isTranscribed: true).search(params[:search]).paginate(page: params[:page], per_page: 4)
   end
 
   def edit
@@ -37,7 +41,7 @@ class TagsController < ApplicationController
       if @tag.update(tag_params)
         format.html { redirect_to tags_path, notice: 'Tag was successfully updated.' }
       else
-        format.html { render :OLD_edit }
+        format.html { render :edit }
       end
     end
   end
@@ -53,7 +57,7 @@ class TagsController < ApplicationController
   private
 
   def transcribe(img_url)
-    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY_HERE')
+    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY_GOES_HERE')
     request = Net::HTTP::Post.new(uri)
     request.content_type = 'application/json'
     request.body = JSON.dump('requests' => [{ 'image' => { 'source' => { 'imageUri' => img_url } }, 'features' => [{ 'type' => 'TEXT_DETECTION', 'maxResults' => 1, 'model' => 'builtin/latest' }] }])

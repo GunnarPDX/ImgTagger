@@ -4,7 +4,7 @@
 
 //------------------ Defaults -----------------
 //-Colors
-$charcoal-grey: #2b2b2b;
+$charcoal-grey: #222222; //#2b2b2b;
 $light-grey: #eeeeee;
 $white: #ffffff;
 $soft-orange: #faa667;
@@ -236,8 +236,16 @@ $border-radius-standard: 4px;
 
 //---- Various text/header/container styles
 
+.flex{
+  display: flex;
+}
+
+.left, .right {
+  flex: 1;
+}
+
 .result-box{
-  background: rgba(249, 227, 132, 0.38);
+  background: rgba(226, 223, 220, 0.33); //rgba(249, 227, 132, 0.38);
   //border: 3px solid rgba(214, 209, 214, 0.33);
   border-radius: $border-radius-standard;
   padding: 3px;

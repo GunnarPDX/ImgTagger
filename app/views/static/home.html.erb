@@ -10,7 +10,7 @@
 
         <div class="col-md-3">
           <div class="add-bt-bod">
-            <%= link_to products_path, class: 'index-link' do %>
+            <%= link_to new_product_path, class: 'index-link' do %>
               <%= image_tag('trolley.svg', style:'height: 100px; width: 100px;') %> <!-- Icons from: https://www.flaticon.com -check user agreement -->
             <% end %>
           </div>
@@ -18,7 +18,7 @@
 
         <div class="col-md-3">
           <div class="add-bt-bod">
-            <%= link_to new_product_path, class: 'index-link' do %>
+            <%= link_to products_path, class: 'index-link' do %>
               <%= image_tag('tools.svg', style:'height: 100px; width: 100px;') %>
             <% end %>
           </div>
@@ -34,7 +34,9 @@
 
         <div class="col-md-3">
           <div class="add-bt-bod">
+            <%= link_to transcribed_tags_path, class: 'index-link' do %>
             <%= image_tag('clipboard.svg', style:'height: 100px; width: 100px;') %>
+            <% end %>
           </div>
         </div>
 
@@ -45,12 +47,12 @@
       <div class="row">
         <div class="col-md-3">
           <div class="add-bt-bod">
-            <strong class="add-orange">view products<%#= link_to 'Products', products_path, class: 'index-link' %></strong>
+            <strong class="add-orange">create a product<%#= link_to 'Products', products_path, class: 'index-link' %></strong>
           </div>
         </div>
         <div class="col-md-3">
           <div class="add-bt-bod">
-            <strong class="add-orange">create new product<%#= link_to 'New Product', new_product_path, class: 'index-link'%></strong>
+            <strong class="add-orange">create tags<%#= link_to 'New Product', new_product_path, class: 'index-link'%></strong>
           </div>
         </div>
         <div class="col-md-3">

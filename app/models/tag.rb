@@ -20,4 +20,5 @@ class Tag < ApplicationRecord
       all
     end
   end
+
 end

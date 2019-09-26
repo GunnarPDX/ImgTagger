@@ -42,11 +42,13 @@
                         = image_tag(image.url, class: 'imgStyle')
     .row
       .col-md-12
-        .button-box-index
-          .add-bt-bod
-            //= button_to 'New Product', new_product_path, method: :get, class: 'button button-primary'
+        .button-box-index.flex
+          .left
+            = button_to 'New Product', new_product_path, method: :get, class: 'button button-primary'
+          .center
             .apple_pagination
               = will_paginate @products
+          .right
 
 .col-md-2
 
