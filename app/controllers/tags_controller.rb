@@ -57,7 +57,7 @@ class TagsController < ApplicationController
   private
 
   def transcribe(img_url)
-    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY_GOES_HERE')
+    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY')
     request = Net::HTTP::Post.new(uri)
     request.content_type = 'application/json'
     request.body = JSON.dump('requests' => [{ 'image' => { 'source' => { 'imageUri' => img_url } }, 'features' => [{ 'type' => 'TEXT_DETECTION', 'maxResults' => 1, 'model' => 'builtin/latest' }] }])

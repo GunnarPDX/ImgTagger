@@ -31,9 +31,10 @@
                   = image_tag(tag.fullUrl, class: 'inner-frame')
               .col-md-5
                 .add-bt-bod
-                  strong[style="font-size: 15pt;"]
-                    | Transcription:&ensp;
-                    = tag.transcription
+                  .text-box
+                    .text-frame
+                      strong[style="font-size: 15pt;"]
+                        = tag.transcription
               .col-md-2
 
     .row

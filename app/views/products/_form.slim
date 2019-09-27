@@ -1,7 +1,10 @@
-= simple_form_for(@product) do |f|
-  .form-inputs
-    = f.input :name
-  .form-inputs
-    = f.input :handleBundle
-  .form-actions
-    = f.button :submit
+.row
+  .col-md-12
+    .selector-box-index
+      = simple_form_for(@product) do |f|
+        .form-inputs
+          = f.input :name
+        .form-inputs
+          = f.input :handleBundle
+        .form-actions
+          = f.button :submit

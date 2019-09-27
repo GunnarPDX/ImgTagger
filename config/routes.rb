@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :products do # only...
-    resources :tags # only...
+  resources :products, only: [:index, :show, :new, :edit, :create, :update, :destroy] do
+    resources :tags, only: [:create, :destroy]
   end
 
-  resources :tags # only...
+  resources :tags, only: [:index, :edit, :create, :destroy, :update]
 
   get '/new_tags/:product_id', to: 'cropper#new_tags', as: 'new_tags'
   get 'home', to: 'static#home', as: 'home'

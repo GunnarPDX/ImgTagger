@@ -23,6 +23,10 @@ $border-radius-standard: 4px;
 
 //---------------------------------------------
 
+//---- Product Preview
+
+
+
 //---- Paginate <- 1 2 3 ... 10 11 12 ->
 
 .pagination {
@@ -72,6 +76,31 @@ $border-radius-standard: 4px;
   color: $soft-orange;
 }
 
+//---- Transcription Display Box
+
+.text-frame{
+  background: rgba(249, 242, 244, 0.38);
+  //border: 3px solid rgba(214, 209, 214, 0.33);
+  border-radius: $border-radius-standard;
+  height: 80px;
+  width: 400px;
+  padding: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-box{
+  background: rgba(143, 249, 86, 0.22);
+  padding: 10px;
+}
+
+.inner-frame{
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
 
 //---- Image Tag Frame
 
@@ -245,8 +274,8 @@ $border-radius-standard: 4px;
 }
 
 .result-box{
-  background: rgba(226, 223, 220, 0.33); //rgba(249, 227, 132, 0.38);
-  //border: 3px solid rgba(214, 209, 214, 0.33);
+  background: rgb(239, 247, 230); //rgba(249, 227, 132, 0.38);
+  border: 3px solid rgb(233, 250, 220);
   border-radius: $border-radius-standard;
   padding: 3px;
 }
