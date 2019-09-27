@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190931195029) do
+ActiveRecord::Schema.define(version: 20190931195030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20190931195029) do
     t.integer  "image_id"
     t.string   "visionResult"
     t.boolean  "isVisionTrue"
+    t.index "to_tsvector('english'::regconfig, (category)::text)", name: "tags_category", using: :gin
+    t.index "to_tsvector('english'::regconfig, (transcription)::text)", name: "tags_transcription", using: :gin
     t.index ["product_id"], name: "index_tags_on_product_id", using: :btree
   end
 

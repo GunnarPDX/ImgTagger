@@ -2,10 +2,9 @@ $( '#submit-button' ).hide(); //hide submit button
 //disable button
 $('#form-submit').attr("disabled", false); //re-enable form submit button
 
-//$( '#loading-spinner' ).hide(); //hide loading spinner once done
-$( '#loading-spinner' ).hide();
-//$( '#loading-spinner' ).remove().append().hide();
-//$( '#loading-spinner' ).append().hide(); // just using .hide() broke
+//$( '#loading-spinner' ).hide(); This should work fine in production
+$( '#loading-spinner' ).remove().append().hide();
+
 
 $( '#success-spinner' ).fadeIn(); //successful submit animation
 

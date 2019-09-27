@@ -23,7 +23,10 @@
               .result-box
                 strong
                   | Suggestion:&ensp;
-                = item.visionResult
+                - if item.visionResult
+                  = item.visionResult
+                - else
+                  | OCR Vision Result Unavailable
               br
               //strong
                 | Transcription:

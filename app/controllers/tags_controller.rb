@@ -57,7 +57,13 @@ class TagsController < ApplicationController
   private
 
   def transcribe(img_url)
-    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + 'API_KEY')
+    api_key = 'API_KEY_GOES_HERE' # put your API Key here when you want to use google vision
+    # If you do not want vision results and or do not want your key uploaded onto github then put 'API_KEY_GOES_HERE' in place of it on the above line
+
+    # Do not replace the 'API_KEY_GOES_HERE' below, this is a placeholder check to see if there is no key, put your api key in the above line
+    return if api_key == 'API_KEY_GOES_HERE' # If there is not active api key then this will prevent the code below from running
+
+    uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + api_key)
     request = Net::HTTP::Post.new(uri)
     request.content_type = 'application/json'
     request.body = JSON.dump('requests' => [{ 'image' => { 'source' => { 'imageUri' => img_url } }, 'features' => [{ 'type' => 'TEXT_DETECTION', 'maxResults' => 1, 'model' => 'builtin/latest' }] }])
@@ -85,8 +91,6 @@ class TagsController < ApplicationController
         puts response
         puts response.body
     end
-
-    # make it only save vision result, and then build helper in view to set transcription to vision result...
   end
 
   def set_tag
