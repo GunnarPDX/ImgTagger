@@ -11,6 +11,7 @@ gem 'pg_search'
 gem 'simple_form'
 gem 'slim'
 gem 'will_paginate'
+gem 'masonry-rails'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'

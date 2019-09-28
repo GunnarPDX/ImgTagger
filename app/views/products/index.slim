@@ -1,5 +1,13 @@
-.col-md-2
-.col-md-8
+.col-md-1
+
+.col-md-10
+  #tiles.transitions-enabled
+    - @products.each do |product|
+      .box.panel.panel-default
+        - product.images.first(1).each do |image|
+          = image_tag(image.url, class: 'tile-img')
+
+//.col-md-8
   .shadow
     .row
       .col-md-12
@@ -50,8 +58,8 @@
               = will_paginate @products
           .right
 
-.col-md-2
+.col-md-1
 
 
-
+= javascript_include_tag "product_tiles", "data-turbolinks-track" => true
 = javascript_include_tag "responsive_display", "data-turbolinks-track" => true

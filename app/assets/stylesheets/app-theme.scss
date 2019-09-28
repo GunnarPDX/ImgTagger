@@ -25,7 +25,24 @@ $border-radius-standard: 4px;
 
 //---- Product Preview
 
+//---- Product Tiles
 
+#tiles {
+  margin: 0 auto;
+  width: 100%;
+  .box {
+    margin: 10px;
+    width: 350px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    border-radius: 7px;
+    text-align: center;
+    img {
+      max-width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+  }
+}
 
 //---- Paginate <- 1 2 3 ... 10 11 12 ->
 

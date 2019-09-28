@@ -90,6 +90,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
+    masonry-rails (0.2.4)
+      railties
     method_source (0.9.2)
     mini_magick (4.9.5)
     mini_mime (1.0.2)
@@ -200,6 +202,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   listen (~> 3.0.5)
+  masonry-rails
   mini_magick
   nokogiri (>= 1.10.4)
   pg
