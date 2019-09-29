@@ -1,11 +1,20 @@
 .col-md-1
 
+script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.js"
+
 .col-md-10
   #tiles.transitions-enabled
     - @products.each do |product|
-      .box.panel.panel-default
-        - product.images.first(1).each do |image|
-          = image_tag(image.url, class: 'tile-img')
+      .tile.box
+        .front.shadow
+          - product.images.first(1).each do |image|
+            = image_tag(image.url, class: 'tile-img')
+          br
+          = product.name
+        .back.shadow
+          br
+          |back
+
 
 //.col-md-8
   .shadow

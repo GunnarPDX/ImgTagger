@@ -20,6 +20,13 @@ $graph-paper: 'graphy-dark.png';
 //-Dimensions
 $border-radius-standard: 4px;
 
+//-Shadow
+
+.shadow {
+  //box-shadow: 4px 4px 6px 0 hsla(0, 0%, 0%, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
+}
 
 //---------------------------------------------
 
@@ -30,18 +37,41 @@ $border-radius-standard: 4px;
 #tiles {
   margin: 0 auto;
   width: 100%;
-  .box {
-    margin: 10px;
-    width: 350px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-    border-radius: 7px;
-    text-align: center;
-    img {
-      max-width: 100%;
-      height: auto;
-      padding: 10px;
-    }
+}
+
+.box {
+  margin: 10px;
+  width: 350px;
+  height: 300px;
+  //box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
+  text-align: center;
+  img {
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
   }
+}
+
+.tile {
+  margin: 10px;
+  width: 350px;
+  height: 300px;
+}
+
+.front{
+  width: 350px;
+  height: 300px;
+  border-radius: 4px;
+  background: $white;
+}
+
+.back{
+  width: 350px;
+  height: 300px;
+  border-radius: 4px;
+  background-color: $charcoal-grey;
+  background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
 }
 
 //---- Paginate <- 1 2 3 ... 10 11 12 ->
@@ -177,10 +207,6 @@ $border-radius-standard: 4px;
 }
 
 //----
-
-.shadow {
-  box-shadow: 4px 4px 6px 0 hsla(0, 0%, 0%, 0.15);
-}
 
 .black-box {
   background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
@@ -486,7 +512,8 @@ img:before {
   background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
   background-color: $charcoal-grey;
 
-  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.15);
+  //box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
 }
 
 .navbarLink {
