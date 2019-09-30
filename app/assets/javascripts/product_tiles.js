@@ -3,7 +3,6 @@ $(() => $('#tiles').imagesLoaded(() => $('#tiles').masonry({
     isFitWidth: true
 })));
 
-
 $(".tile").flip();
 
 $('.single-item').slick({
