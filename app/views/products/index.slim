@@ -1,19 +1,44 @@
-.col-md-1
-
 script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.js"
 
+.col-md-1
 .col-md-10
   #tiles.transitions-enabled
     - @products.each do |product|
       .tile.box
         .front.shadow
-          - product.images.first(1).each do |image|
-            = image_tag(image.url, class: 'tile-img')
-          br
-          = product.name
+          .row
+            .col-md-12.single-item
+              - product.images.each do |image|
+                = image_tag(image.url)
+          .row
+            .col-md-12
+              .index-item-menu
+                .index-link
+                  //i.fas.fa-bars.fa-icon
+                  = image_tag('cursor.svg', style:'height: 20px; width: 20px;')
+              .strong.left.add-left-padding
+                = product.name
+
         .back.shadow
           br
-          |back
+          br
+          br
+          = button_to product, class: 'index-link2', method: :get do
+            i.fas.fa-eye.fa-icon2
+            |  Show
+          = button_to edit_product_path(product), class: 'index-link2', method: :get do
+            i.fas.fa-edit.fa-icon2
+            |  Edit
+          = button_to new_tags_url(product), class: 'index-link2', method: :get do
+            i.fas.fa-crop.fa-icon2
+            |  Create Tags
+          = button_to product, class: 'index-link2', method: :delete, data: {confirm: 'Are you sure?'} do
+            i.fas.fa-trash-alt.fa-icon2
+            |  Delete
+          div[style="height: 45px;"]
+          .index-item-menu
+            .index-link
+              = image_tag('cursor-light.svg', style: 'height: 20px; width: 20px;')
 
 
 //.col-md-8

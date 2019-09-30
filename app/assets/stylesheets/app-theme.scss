@@ -13,7 +13,7 @@ $saved-green: rgba(151, 191, 18, 0.35);
 
 //-Textures
 $damascus: 'https://www.transparenttextures.com/patterns/cartographer.png';
-$white-grain: 'noisy-texture-100x100-o2-d10-c-ffffff-t0.png';
+//$white-grain: 'noisy-texture-100x100-o2-d10-c-ffffff-t0.png';
 $grey-grain: 'noisy-texture-100x100-o4-d10-c-eeeeee-t0.png';
 $graph-paper: 'graphy-dark.png';
 
@@ -42,7 +42,7 @@ $border-radius-standard: 4px;
 .box {
   margin: 10px;
   width: 350px;
-  height: 300px;
+  height: 290px;
   //box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
   border-radius: 4px;
   text-align: center;
@@ -51,27 +51,38 @@ $border-radius-standard: 4px;
     height: auto;
     padding: 4px;
   }
+
+  .slick-prev {
+    left: 5%;
+    text-shadow: 0 0 3px $white;
+  }
+  .slick-next {
+    right: 5%;
+    text-shadow: 0 0 3px $white;
+  }
 }
 
 .tile {
   margin: 10px;
   width: 350px;
-  height: 300px;
 }
 
 .front{
   width: 350px;
-  height: 300px;
   border-radius: 4px;
   background: $white;
 }
 
 .back{
   width: 350px;
-  height: 300px;
+  //height: 300px;
   border-radius: 4px;
   background-color: $charcoal-grey;
   background-image: url('https://www.transparenttextures.com/patterns/cartographer.png');
+}
+
+.add-left-padding{
+  padding-left: 5px;
 }
 
 //---- Paginate <- 1 2 3 ... 10 11 12 ->
@@ -306,6 +317,29 @@ $border-radius-standard: 4px;
   color: $charcoal-grey;
 }
 
+.index-link2 {
+  //float: right;
+  //display: inline-block;
+  //margin-right: 10px;
+  //padding-right: 10px;
+  //padding-left: 2px;
+  margin: 10px;
+  text-decoration: none;
+  color: $light-grey; //$white;
+  background: none;
+  border: none;
+
+  &:hover, &:visited {
+    color: $light-grey; //$white;
+    background: none;
+  }
+
+}
+
+.fa-icon2 {
+  color: $light-grey; //$white;
+}
+
 //---- Various text/header/container styles
 
 .flex{
@@ -328,7 +362,7 @@ $border-radius-standard: 4px;
 }
 
 .selector-box2 {
-  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  //background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
   background-color: $white;
   border-radius: $border-radius-standard;
   padding: 10px;
@@ -420,21 +454,21 @@ $border-radius-standard: 4px;
 //---- Various Container Styles
 
 .selector-box {
-  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  //background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
   background-color: #ffffff;
   border-radius: $border-radius-standard;
   padding: 10px;
 }
 
 .selector-box-index {
-  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  //background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
   background-color: #ffffff;
   border-top: 1px solid rgb(214, 217, 214);
   padding: 10px;
 }
 
 .img-box {
-  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  //background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
   padding-top: 25px;
   padding-bottom: 5px;
   background-color: #FFFFFF;
@@ -449,7 +483,7 @@ $border-radius-standard: 4px;
 }
 
 .img-box3 {
-  background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
+  //background-image: url('noisy-texture-100x100-o2-d10-c-ffffff-t0.png');
   background-color: $white;
   padding: 9px;
   height: auto;
@@ -607,6 +641,10 @@ html, body {
 
 input:focus {
   outline:none; // removes annoying blue glow on click from buttons/links
+}
+
+button {
+  outline: none; // this one
 }
 
 //

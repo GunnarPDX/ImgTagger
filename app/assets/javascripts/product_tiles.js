@@ -5,3 +5,8 @@ $(() => $('#tiles').imagesLoaded(() => $('#tiles').masonry({
 
 
 $(".tile").flip();
+
+$('.single-item').slick({
+    fade: true,
+    cssEase: 'ease-in-out',
+});
