@@ -30,7 +30,34 @@ $border-radius-standard: 4px;
 
 //---------------------------------------------
 
-//---- Product Preview
+//---- Product (Show View) IMG Gallery
+
+#show-gallery{
+  .gallery-img{
+    width: auto;
+    height: 200px;
+
+    border: 1px solid #b3b3b3;
+    border-radius: $border-radius-standard;
+
+    margin:0 auto;
+
+  }
+
+  .slick-slide > div {
+    transform: scale(.5);
+    transition: transform .3s cubic-bezier(.4,0,.2,1);
+    //z-index: 1;
+  }
+  .slick-center > div {
+    transform: scale(1);
+    //z-index: 1000;
+  }
+  .slider__item > img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 //---- Product Tiles
 

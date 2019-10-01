@@ -1,36 +1,24 @@
-h4
-  strong
-    | Name:
-  = @product.name
-.img-box3.shadow
-  table
-    thead
-      tr
-        td
-          strong
-            | HandleBundle:
-    tbody
-      - @product.images.each do |image|
-        tr
-          td
-            = image.handle
-br
-.row
-  .col-md-12
-    .img-box3.shadow
-      div[style="margin: 0 40px"]
-        .responsive
-          - @product.images.each do |image|
-            div
-              = image_tag(image.url, class: 'imgStyle')
-br
-.row
-  .col-md-12
+.col-md-2
+.col-md-8
+  .shadow
     .title-box-index
-      div[style="height:10px;"]
-= render @tags
-.row
-  .col-md-12
-    .button-box-index
-      div[style="height:10px;"]
-= javascript_include_tag "responsive_display", "data-turbolinks-track" => true
+      p.title-index
+        = @product.name
+    .row
+      .col-md-12
+        .selector-box-index
+          div[style="margin: 0 40px"]
+            #show-gallery.center-gallery
+              - @product.images.each do |image|
+                div
+                  = image_tag(image.url, class: 'gallery-img')
+    = render @tags
+    .row
+      .col-md-12
+        .button-box-index
+          div[style="height:30px;"]
+
+.col-md-2
+
+
+= javascript_include_tag "show_gallery", "data-turbolinks-track" => true
