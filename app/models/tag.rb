@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+# Base 64 images can be used in place of img URLs to reduce the number of filestack translations
+# cropper.js includes some functions that allow base 64 strings to be saved for cropped images (tags)
+
+
 class Tag < ApplicationRecord
   belongs_to :image, optional: true
   belongs_to :product
