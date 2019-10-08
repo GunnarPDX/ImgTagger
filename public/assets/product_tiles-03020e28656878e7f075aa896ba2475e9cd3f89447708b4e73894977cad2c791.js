@@ -1,0 +1,1 @@
+$(()=>$("#tiles").imagesLoaded(()=>$("#tiles").masonry({itemSelector:".box",isFitWidth:!0}))),$(".tile").flip(),$(".single-item").slick({fade:!0,cssEase:"ease-in-out"});
