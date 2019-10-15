@@ -33,7 +33,7 @@ class Tag < ApplicationRecord
     # Quota set on GCS dashboard: 800 transcriptions every 30 days, 20 per minute...
     # - https://cloud.google.com/apis/docs/capping-api-usage
     # make sure vision is activated along with key being activated and unrestricted
-    api_key = 'AIzaSyBdk3uBK1YaWbMj-ikpHKxClml_NN053lA' # put your API Key here when you want to use google vision
+    api_key = 'API_KEY_GOES_HERE' # put your API Key here when you want to use google vision
     # If you do not want vision results and or do not want your key uploaded onto github then put 'API_KEY_GOES_HERE' in place of it on the above line
 
     # Do not replace the 'API_KEY_GOES_HERE' below, this is a placeholder check to see if there is no key, put your api key in the above line
@@ -54,9 +54,10 @@ class Tag < ApplicationRecord
     case response
     when Net::HTTPSuccess
       data = JSON.parse(response.body)
-      transcription = data['responses'][0]['textAnnotations'][0]['description']
+      p response.body
+      # transcription = data['responses'][0]['textAnnotations'][0]['description']
       # @tag.update(visionResult: transcription, isVisionTrue: true) # if run from controller
-      tag.update(visionResult: transcription, isVisionTrue: true)
+      # tag.update(visionResult: transcription, isVisionTrue: true)
     when Net::HTTPUnauthorized
       puts 'Add/Setup API Key'
       puts response.body
