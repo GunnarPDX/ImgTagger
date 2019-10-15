@@ -30,12 +30,14 @@ class Tag < ApplicationRecord
   end
 
   def self.transcribe(img_url, tag)
+    # Quota set on GCS dashboard: 800 transcriptions every 30 days, 20 per minute...
+    # - https://cloud.google.com/apis/docs/capping-api-usage
     # make sure vision is activated along with key being activated and unrestricted
     api_key = 'API_KEY_GOES_HERE' # put your API Key here when you want to use google vision
     # If you do not want vision results and or do not want your key uploaded onto github then put 'API_KEY_GOES_HERE' in place of it on the above line
 
     # Do not replace the 'API_KEY_GOES_HERE' below, this is a placeholder check to see if there is no key, put your api key in the above line
-    return if api_key == 'API_KEY_GOES_HERE' # If there is not active api key then this will prevent the code below from running
+    return if api_key == 'API_KEY_GOES_HERE' # If there is not an active api key then this will prevent the code below from running
 
     uri = URI.parse('https://vision.googleapis.com/v1/images:annotate?key=' + api_key)
     request = Net::HTTP::Post.new(uri)
@@ -58,11 +60,14 @@ class Tag < ApplicationRecord
     when Net::HTTPUnauthorized
       puts 'Add/Setup API Key'
       puts response.body
+    when Net::HTTPForbidden
+      puts 'Monthly Quota Reached'
+      puts response.body
     when Net::HTTPServerError
       puts 'Server-side Error'
       puts response.body
     else
-      puts 'Other Error'
+      puts 'Other Error - https://cloud.google.com/storage/docs/json_api/v1/status-codes'
       puts response
       puts response.body
     end
