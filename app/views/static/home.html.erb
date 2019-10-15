@@ -10,11 +10,11 @@
 
         <div class="col-md-3">
           <div class="add-bt-bod">
-            <abbr title="This feature is disabled in this demo">
-            <%#= link_to new_product_path, class: 'index-link' do %>
-              <%= image_tag('trolley.svg', style:'height: 100px; width: 100px; cursor:not-allowed;') %> <!-- Icons from: https://www.flaticon.com -check user agreement -->
-            <%# end %>
-            </abbr>
+            <!-- <abbr title="This feature is disabled in this demo"> -->
+            <%= link_to new_product_path, class: 'index-link' do %>
+              <%= image_tag('trolley.svg', style:'height: 100px; width: 100px;') %> <!-- Icons from: https://www.flaticon.com -check user agreement -->
+            <% end %>
+            <!-- </abbr> cursor:not-allowed; -->
           </div>
         </div>
 

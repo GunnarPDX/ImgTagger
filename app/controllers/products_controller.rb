@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class ProductsController < ApplicationController
+  require 'open-uri'
+  require 'net/http'
+  require 'uri'
+  require 'json'
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -58,8 +63,21 @@ class ProductsController < ApplicationController
     handlebundle.split(',').each do |h|
       next if h.nil?
 
-      @image = @product.images.create(handle: h, url: filestack_url(h))
-      @image.save
+      if remote_file_exists?(filestack_url(h))
+        @image = @product.images.create(handle: h, url: filestack_url(h))
+        @image.save
+      end
+
+    end
+  end
+
+  def remote_file_exists?(url)
+    url = URI.parse(url)
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl = (url.scheme == "https")
+
+    http.start do |http|
+      return http.head(url.request_uri)['Content-Type'].start_with? 'image'
     end
   end
 
