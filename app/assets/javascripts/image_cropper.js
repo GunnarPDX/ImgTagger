@@ -10,6 +10,13 @@ ImageCropper = function(elementId) {
         $('#coords-h').val(Math.round(event.detail.height));
         $('#coords-rotate').val(Math.round(event.detail.rotate));
 
+
+
+        //let canvas = cropper.getCroppedCanvas().toDataURL('image/jpeg')
+        //console.log(canvas);
+        //blob?
+
+
         let handle = document.getElementById("cropImage").src;
         handle = handle.replace('https://cdn.filestackcontent.com/resize=w:500,h:500,fit:max/','');
 

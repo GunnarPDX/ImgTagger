@@ -83,7 +83,7 @@ class ProductsController < ApplicationController
 
   def update_images(handlebundle)
     @images.each(&:destroy) # destroys all images belonging to product
-    create_images(handlebundle) # rebuilds images ::: Make this only delete/replace images w/out tags?
+    create_images(handlebundle) # rebuilds images ::: Make these only delete/replace images w/out tags?
   end
 
   def filestack_url(handle)
